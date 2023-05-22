@@ -1,0 +1,37 @@
+{
+  "name": "rebel-ui-kit",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/brianstevo"
+  },
+  "version": "0.0.1",
+  "description": "react ui library",
+  "type": "module",
+  "scripts": {
+    "rollup": "rollup -c"
+  },
+  "author": "brianstevo",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-typescript": "^11.1.1",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^3.23.0",
+    "rollup-plugin-dts": "^5.3.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^5.0.4"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "tslib": "^2.5.2"
+  }
+}

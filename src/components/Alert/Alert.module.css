@@ -1,0 +1,40 @@
+.alert {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+  padding: 20px 20px 20px 30px;
+  position: relative;
+  z-index: -1;
+}
+
+.success {
+  background-color: #98f5e1;
+  /* color: #319795; */
+  color: #236c5b;
+}
+
+/*close*/
+.close {
+  font-size: 45px;
+  font-weight: 400;
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+
+.warning {
+  background-color: #ffe6d3;
+  color: #ff892f;
+}
+.error {
+  background-color: #fad2e1;
+  color: #7c193d;
+}
+.info {
+  background-color: #ededed;
+  color: #5d5d5d;
+}
+.dark {
+  background-color: #000;
+  color: #fff;
+}
