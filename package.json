@@ -1,9 +1,6 @@
 {
   "name": "rebel-ui-kit",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/brianstevo"
-  },
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "react ui library",
   "type": "module",
   "scripts": {
@@ -25,6 +22,7 @@
     "typescript": "^5.0.4"
   },
   "main": "dist/cjs/index.js",
+  "css": "dist/styles.css",
   "module": "dist/esm/index.js",
   "files": [
     "dist"
@@ -33,5 +31,9 @@
   "dependencies": {
     "autoprefixer": "^10.4.14",
     "tslib": "^2.5.2"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }

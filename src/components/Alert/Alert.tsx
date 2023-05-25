@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Alert.module.css'
+import './Alert.css'
 
 export interface AlertProps {
   status: string
@@ -8,8 +8,8 @@ export interface AlertProps {
 const Alert = ({ status = 'info' }: AlertProps) => {
   return (
     <>
-      <div className={`${styles.alert} ${styles.status}`}>
-        <div className={styles.close}>&times;</div>
+      <div className={`alert ${status}`}>
+        <div className='close'>&times;</div>
         <p>Alert message!</p>
       </div>
     </>

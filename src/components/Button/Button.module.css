@@ -1,3 +1,19 @@
 .display {
   text-align: center;
 }
+.text-warning {
+  background-color: #ffe6d3;
+  color: #ff892f;
+}
+.error {
+  background-color: #fad2e1;
+  color: #7c193d;
+}
+.info {
+  background-color: #ededed;
+  color: #5d5d5d;
+}
+.dark {
+  background-color: #000;
+  color: #fff;
+}
