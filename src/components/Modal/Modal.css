@@ -1,0 +1,56 @@
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.5);
+  animation: modal 100ms linear normal;
+}
+
+.modalContainer {
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  animation: modal 100ms linear normal;
+  margin: -250px 20px 0 20px;
+}
+
+.modalContainer .modalTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 10px 10px 20px;
+}
+
+.modalContainer .modalTitle button {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.modalContainer .modalBody {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.modalContainer .modalFooter {
+  padding: 10px 20px;
+  text-align: end;
+}
+
+@keyframes modal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

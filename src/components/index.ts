@@ -1,2 +1,5 @@
 export { default as Button } from './Button'
 export { default as Alert } from './Alert'
+export { FlexContainer, FlexRow, FlexColumn } from './FlexGrid'
+export { default as Loader } from './Loader'
+export { default as Modal } from './Modal'

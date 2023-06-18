@@ -1,6 +1,6 @@
 {
   "name": "rebel-ui-kit",
-  "version": "0.0.6",
+  "version": "0.0.16",
   "description": "react ui library",
   "type": "module",
   "scripts": {
@@ -21,6 +21,10 @@
     "rollup-plugin-postcss": "^4.0.2",
     "typescript": "^5.0.4"
   },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "main": "dist/cjs/index.js",
   "css": "dist/styles.css",
   "module": "dist/esm/index.js",
@@ -29,7 +33,11 @@
   ],
   "types": "dist/index.d.ts",
   "dependencies": {
+    "@rollup/plugin-terser": "^0.4.3",
     "autoprefixer": "^10.4.14",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "tslib": "^2.5.2"
   },
   "publishConfig": {

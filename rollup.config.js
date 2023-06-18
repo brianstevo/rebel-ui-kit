@@ -5,7 +5,11 @@ import dts from 'rollup-plugin-dts'
 import postcss from 'rollup-plugin-postcss'
 import autoprefixer from 'autoprefixer'
 import packageJson from './package.json' assert { type: 'json' }
-import path from 'path'
+import copy from 'rollup-plugin-copy'
+import del from 'rollup-plugin-delete'
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import terser from '@rollup/plugin-terser'
+
 export default [
   {
     input: 'src/index.ts',
@@ -22,60 +26,37 @@ export default [
       },
     ],
     plugins: [
+      peerDepsExternal(),
       resolve(),
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),
-      // css({}),
       postcss({
-        // minimize: true,
-        // extensions: ['.css'],
-        // extract: true,
-        // output: 'dist/style.css',
         plugins: [autoprefixer()],
-        sourceMap: true,
         extract: true,
         minimize: true,
+        // sourceMap: true,
+        // modules: true,
       }),
-      // postcss({
-      //   plugins: [autoprefixer()],
-      //   sourceMap: true,
-      //   extract: true,
-      //   minimize: true,
-      // }),
-      // plugins: [autoprefixer()],
-      // modules: true,
-      // sourceMap: true,
-      // extract: true,
-      // minimize: true,
-      // }),
+      terser(),
     ],
   },
   {
     input: 'dist/esm/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
-    plugins: [dts()],
-    external: [/\.css$/],
-  },
-  {
-    input: 'src/index.css',
-    output: [
-      {
-        file: packageJson.css,
-        format: 'iife',
-        sourcemap: 'inline',
-        name: 'MyBundle',
-      },
-    ],
     plugins: [
-      postcss({
-        // extensions: ['.css'],
-        // output: 'dist/style.css',
-        plugins: [autoprefixer()],
-        modules: true,
-        sourceMap: true,
-        extract: true,
-        minimize: true,
+      copy({
+        targets: [{ src: 'dist/esm/index.css', dest: 'dist', rename: 'styles.css' }],
+        verbose: true,
+        hook: 'buildStart',
       }),
+      del({
+        targets: ['dist/cjs/index.css', 'dist/esm/index.css'],
+        verbose: true,
+        hook: 'buildEnd',
+      }),
+      dts(),
     ],
+    external: [/\.(css|less|scss)$/],
+    watch: false,
   },
 ]
